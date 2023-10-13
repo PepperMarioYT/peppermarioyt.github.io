@@ -7,13 +7,14 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #333;
+            color: white;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #0099cc;
+            background-color: #222;
             color: white;
             display: flex;
             justify-content: space-between;
@@ -66,7 +67,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #333;
+            background-color: #222;
             min-width: 160px;
             z-index: 1;
         }
@@ -93,12 +94,12 @@
         section {
             margin: 20px;
             padding: 20px;
-            background-color: white;
+            background-color: #444;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
         footer {
-            background-color: #333;
+            background-color: #222;
             color: white;
             text-align: center;
             padding: 10px;
@@ -114,20 +115,15 @@
                 <li><a href="#">Games</a></li>
                 <li><a href="#">Store</a></li>
                 <li><a href="#">Community</a></li>
+                <li class="dropdown">
+                    <a class="button">Robux</a>
+                    <div class="dropdown-content">
+                        <a href="#">Get Robux</a>
+                        <a href="#">Get Credits</a>
+                    </div>
+                </li>
             </ul>
         </nav>
-        <div class="button-container">
-            <button class="button">Get Robux</button>
-            <button class="button">Get Credits</button>
-            <div class="dropdown">
-                <a class="button">Menu</a>
-                <div class="dropdown-content">
-                    <a href="#">Item 1</a>
-                    <a href="#">Item 2</a>
-                    <a href="#">Item 3</a>
-                </div>
-            </div>
-        </div>
     </header>
     <main>
         <section>
@@ -144,3 +140,4 @@
     </footer>
 </body>
 </html>
+
