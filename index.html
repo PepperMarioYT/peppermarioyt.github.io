@@ -15,7 +15,6 @@
         header {
             background-color: #0099cc;
             color: white;
-            padding: 20px;
             text-align: center;
             position: sticky;
             top: 0;
@@ -55,7 +54,10 @@
         }
 
         .button-container {
+            background-color: #333;
             text-align: center;
+            padding: 10px;
+            position: relative;
         }
 
         .button {
@@ -80,11 +82,6 @@
 <body>
     <header>
         <h1>Welcome to Roblox Concept UI</h1>
-        <div class="button-container">
-            <button class="button">Get Robux</button>
-            <button class="button">Get Credits</button>
-            <a href="https://www.roblox.com/games/10118559731/nicos-nextbots-BIRTHDAY" class="button" target="_blank">Nico's nextbots</a>
-        </div>
     </header>
     <nav>
         <ul>
@@ -97,13 +94,17 @@
     <main>
         <section>
             <h2>Featured Games</h2>
-            <!-- Add game thumbnails and descriptions here -->
+            <a href="https://www.roblox.com/games/10118559731/nicos-nextbots-BIRTHDAY" class="button" target="_blank">Nico's nextbots</a>
         </section>
         <section>
             <h2>Store</h2>
             <!-- Add featured items or categories from the store here -->
         </section>
     </main>
+    <div class="button-container">
+        <button class="button">Get Robux</button>
+        <button class="button">Get Credits</button>
+    </div>
     <footer>
         <p>Roblox Concept UI</p>
     </footer>
