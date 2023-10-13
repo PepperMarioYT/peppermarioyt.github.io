@@ -17,6 +17,8 @@
             color: white;
             padding: 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
         }
 
         nav {
@@ -52,6 +54,21 @@
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
         }
 
+        .button-container {
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0099cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -63,6 +80,11 @@
 <body>
     <header>
         <h1>Welcome to Roblox Concept UI</h1>
+        <div class="button-container">
+            <button class="button">Get Robux</button>
+            <button class="button">Get Credits</button>
+            <a href="https://www.roblox.com/games/10118559731/nicos-nextbots-BIRTHDAY" class="button" target="_blank">Nico's nextbots</a>
+        </div>
     </header>
     <nav>
         <ul>
@@ -83,7 +105,7 @@
         </section>
     </main>
     <footer>
-        <p>just a concept</p>
+        <p>Roblox Concept UI</p>
     </footer>
 </body>
 </html>
