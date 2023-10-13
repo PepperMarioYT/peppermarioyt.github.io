@@ -72,8 +72,13 @@
             z-index: 1;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .dropdown-toggle::after {
+            content: "▼"; /* Unicode down arrow character */
+            margin-left: 5px;
         }
 
         .dropdown-content a {
@@ -85,6 +90,10 @@
 
         .dropdown-content a:hover {
             background-color: #0099cc;
+        }
+
+        .dropdown.is-open .dropdown-content {
+            display: block;
         }
 
         main {
@@ -104,6 +113,18 @@
             text-align: center;
             padding: 10px;
         }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .dropdown-content {
+                position: static;
+                background-color: #222;
+                display: none;
+            }
+            .dropdown.is-open .dropdown-content {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -116,10 +137,11 @@
                 <li><a href="#">Store</a></li>
                 <li><a href="#">Community</a></li>
                 <li class="dropdown">
-                    <a class="button">Robux</a>
+                    <div class="dropdown-toggle">Robux ▼</div>
                     <div class="dropdown-content">
                         <a href="#">Get Robux</a>
                         <a href="#">Get Credits</a>
+                        <a class="close-dropdown" href="#">Close</a>
                     </div>
                 </li>
             </ul>
@@ -138,6 +160,21 @@
     <footer>
         <p>Roblox Concept UI</p>
     </footer>
+    <script>
+        // JavaScript for mobile dropdown
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach((dropdown) => {
+            dropdown.addEventListener('click', () => {
+                dropdown.classList.toggle('is-open');
+            });
+            const closeDropdown = dropdown.querySelector('.close-dropdown');
+            if (closeDropdown) {
+                closeDropdown.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    dropdown.classList.remove('is-open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-
