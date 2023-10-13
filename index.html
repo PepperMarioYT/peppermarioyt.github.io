@@ -15,25 +15,26 @@
         header {
             background-color: #0099cc;
             color: white;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
             position: sticky;
             top: 0;
+            z-index: 100;
         }
 
-        nav {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+        .logo {
+            font-size: 24px;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            display: flex;
         }
 
         nav ul li {
-            display: inline;
             margin: 0 20px;
         }
 
@@ -42,22 +43,8 @@
             color: white;
         }
 
-        main {
-            padding: 20px;
-        }
-
-        section {
-            margin: 20px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-        }
-
         .button-container {
-            background-color: #333;
             text-align: center;
-            padding: 10px;
-            position: relative;
         }
 
         .button {
@@ -71,6 +58,45 @@
             margin: 10px;
         }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #0099cc;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -81,16 +107,28 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Roblox Concept UI</h1>
+        <h1 class="logo">Roblox</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Store</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+        </nav>
+        <div class="button-container">
+            <button class="button">Get Robux</button>
+            <button class="button">Get Credits</button>
+            <div class="dropdown">
+                <a class="button">Menu</a>
+                <div class="dropdown-content">
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </div>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Games</a></li>
-            <li><a href="#">Store</a></li>
-            <li><a href="#">Community</a></li>
-        </ul>
-    </nav>
     <main>
         <section>
             <h2>Featured Games</h2>
@@ -101,10 +139,6 @@
             <!-- Add featured items or categories from the store here -->
         </section>
     </main>
-    <div class="button-container">
-        <button class="button">Get Robux</button>
-        <button class="button">Get Credits</button>
-    </div>
     <footer>
         <p>Roblox Concept UI</p>
     </footer>
