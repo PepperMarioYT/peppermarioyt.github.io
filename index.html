@@ -57,25 +57,42 @@
             margin-top: 100px; /* To ensure content is below the sticky header */
         }
 
-        /* Neumorphic UI styles for featured experiences and store sections */
-        .neumorphic-container {
-            background-color: #181818;
-            box-shadow: -10px -10px 30px 0 #0f0f0f, 10px 10px 30px 0 #212121;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 10px;
+        /* Bento grid for Roblox items */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px;
         }
 
-        .section-title {
-            font-size: 24px;
+        .bento-item {
+            background-color: #282828; /* Dark gray background */
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+        }
+
+        .bento-title {
+            font-size: 16px;
             font-weight: bold;
             color: #ffffff;
             margin-bottom: 10px;
         }
 
-        .section-content {
-            display: flex;
-            gap: 20px;
+        .bento-image {
+            max-width: 100%;
+            max-height: 100%;
+            transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+        }
+
+        /* Apply a fade effect along the Y-axis where the text will be */
+        .bento-item:hover .bento-image {
+            transform: translateY(-10px);
+            opacity: 0.8;
         }
 
         /* Add more styling as needed */
@@ -84,7 +101,7 @@
 <body>
     <div class="loading-container">
         <div class="loading-logo">Roblox</div>
-        <div class="loading-spinner"></div>
+        <div class "loading-spinner"></div>
     </div>
 
     <!-- Sticky header - initially off the screen -->
@@ -101,18 +118,179 @@
 
     <!-- Your content goes here, but initially, set it to display: none -->
     <div id="content">
-        <div class="neumorphic-container">
-            <div class="section-title">Featured Experiences</div>
-            <div class="section-content">
-                <!-- Add featured experiences content here -->
+        <div class="bento-grid">
+            <div class="bento-item">
+                <div class="bento-title">Super Super Happy Face</div>
+                <img class="bento-image" src="https://tr.rbxcdn.com/5eacc7281795d67c2ef8363261f1e149/420/420/Avatar/Png">
             </div>
+
+            <!-- Add Headless Horseman (HS) item with the same hover effect -->
+            <div class="bento-item">
+                <div class="bento-title">Headless Horseman</div>
+                <img class="bento-image" src="https://tr.rbxcdn.com/5629f033a854483bfd3873dd0d6e404b/420/420/Avatar/Png">
+            </div>
+
+            <!-- Add more items as needed -->
         </div>
 
-        <div class="neumorphic-container">
-            <div class="section-title">Store</div>
-            <div class="section-content">
-                <!-- Add store content here -->
+        <!-- Rest of your page content -->
+    </div>
+
+    <script>
+        // JavaScript to hide the loading screen and animate the content when the page is fully loaded
+        window.addEventListener('load', function () {
+            var loadingContainer = document.querySelector('.loading-container');
+            var content = document.getElementById('content');
+            var stickyHeader = document.getElementById('sticky-header');
+
+            // Hide the loading screen
+            loadingContainer.style.display = 'none';
+
+            // Animate the content by changing opacity and translating from the left
+            content.style.opacity = '1';
+            content.style.transform = 'translateX(0)';
+
+            // Slide in the sticky header from the top
+            setTimeout(function () {
+                stickyHeader.style.top = '0';
+            }, 500); // Adjust the delay as needed
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Roblox Concept UI</title>
+    <style>
+        /* CSS styles for the loading screen */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #181818; /* Dark background similar to Roblox */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sticky header styles */
+        .sticky-header {
+            position: fixed;
+            top: -80px; /* Initially off the screen */
+            left: 0;
+            width: 100%;
+            background-color: #181818; /* Dark background for the header */
+            box-shadow: 0 5px 5px -5px #000; /* Shadow effect */
+            z-index: 100; /* Ensure the header is on top of other content */
+            padding: 10px 20px;
+            transition: top 1s ease-in; /* Animation for sliding in from the top */
+        }
+
+        .navbar {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-item {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Content styles - initially hidden with opacity 0 and translated to the left */
+        #content {
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 1s ease-in, transform 1s ease-in;
+            margin-top: 100px; /* To ensure content is below the sticky header */
+        }
+
+        /* Bento grid for Roblox items */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .bento-item {
+            background-color: #282828; /* Dark gray background */
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+        }
+
+        .bento-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .bento-image {
+            max-width: 100%;
+            max-height: 100%;
+            transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+        }
+
+        /* Apply a fade effect along the Y-axis where the text will be */
+        .bento-item:hover .bento-image {
+            transform: translateY(-10px);
+            opacity: 0.8;
+        }
+
+        /* Add more styling as needed */
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="loading-logo">Roblox</div>
+        <div class "loading-spinner"></div>
+    </div>
+
+    <!-- Sticky header - initially off the screen -->
+    <div class="sticky-header" id="sticky-header">
+        <ul class="navbar">
+            <li class="navbar-item">Home</li>
+            <li class="navbar-item">Games</li>
+            <li class="navbar-item">Avatar</li>
+            <li class="navbar-item">Shop</li>
+            <li class="navbar-item">Community</li>
+        </ul>
+        <a class="logo" href="#">Roblox Logo</a>
+    </div>
+
+    <!-- Your content goes here, but initially, set it to display: none -->
+    <div id="content">
+        <div class="bento-grid">
+            <div class="bento-item">
+                <div class="bento-title">Super Super Happy Face</div>
+                <img class="bento-image" src="https://tr.rbxcdn.com/5eacc7281795d67c2ef8363261f1e149/420/420/Avatar/Png">
             </div>
+
+            <!-- Add Headless Horseman (HS) item with the same hover effect -->
+            <div class="bento-item">
+                <div class="bento-title">Headless Horseman</div>
+                <img class="bento-image" src="https://tr.rbxcdn.com/5629f033a854483bfd3873dd0d6e404b/420/420/Avatar/Png">
+            </div>
+
+            <!-- Add more items as needed -->
         </div>
 
         <!-- Rest of your page content -->
