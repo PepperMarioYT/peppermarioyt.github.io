@@ -1,3 +1,35 @@
+/* Base font styling for your website */
 body {
-  background-color: teal;
+    margin: 0;
+    padding: 0;
+    background-color: #282828;
+    font-family: "MS Sans Serif", sans-serif; /* Default font to MS Sans Serif */
+}
+
+/* MS Sans Serif font styling for windows 98 theme */
+.ms-sans-serif {
+    font-family: "MS Sans Serif", sans-serif;
+}
+
+/* Webdings font styling for specific elements */
+.webdings {
+    font-family: "Webdings", sans-serif;
+}
+
+/* For the terminal container - MS Sans Serif (default theme) */
+.wm-body {
+    font-family: "MS Sans Serif", sans-serif; /* Default terminal font */
+}
+
+/* Example for other UI elements */
+.wm-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: "MS Sans Serif", sans-serif; /* Default header font */
 }
