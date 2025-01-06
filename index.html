@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 98 Themed CLI</title>
+    <title>PepperMario!</title>  <!-- Changed title here -->
     
     <!-- 98.css for Windows 98 styling -->
     <link rel="stylesheet" href="https://unpkg.com/98.css">
@@ -17,7 +17,7 @@
 <body>
     <div class="window" style="width: 600px; height: 450px; margin: 50px auto;">
         <div class="title-bar">
-            <span>Terminal</span>
+            <span>PepperMario!</span>  <!-- Changed title here as well -->
             <div class="wm-header-buttons" style="float: right;">
                 <button onclick="maximizeWindow()">1</button> <!-- Maximize (button 1) -->
                 <button onclick="minimizeWindow()">0</button> <!-- Minimize (button 0) -->
@@ -38,7 +38,15 @@
             const terminalElement = $("#terminal")[0]; // jQuery to select the terminal element
             const terminal = new Terminal();
             terminal.open(terminalElement);
-            terminal.write("Welcome to your Windows 98 themed terminal!\r\n");
+
+            // Display Windows version info
+            terminal.write("Microsoft Windows [Version 10.0.19045.2486]\r\n");
+            terminal.write("(c) Microsoft Corporation. All rights reserved.\r\n");
+
+            // Simulate a brief pause before showing the command prompt
+            setTimeout(function() {
+                terminal.write("\r\nC:\\PepperMario> ");  // Simulate the CMD prompt
+            }, 2000);  // Wait 2 seconds before showing the prompt
 
             // Maximize window (Button 1)
             $(".wm-header-buttons button:nth-child(1)").click(function () {
