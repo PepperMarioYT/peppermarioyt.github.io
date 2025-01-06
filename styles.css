@@ -1,35 +1,66 @@
-/* Base font styling for your website */
+/* Base styling for the body */
 body {
     margin: 0;
     padding: 0;
-    background-color: #282828;
-    font-family: "MS Sans Serif", sans-serif; /* Default font to MS Sans Serif */
-}
-
-/* MS Sans Serif font styling for windows 98 theme */
-.ms-sans-serif {
+    background-color: #008080; /* Windows 98 teal background */
     font-family: "MS Sans Serif", sans-serif;
 }
 
-/* Webdings font styling for specific elements */
-.webdings {
-    font-family: "Webdings", sans-serif;
+/* Window manager container */
+.wm-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* For the terminal container - MS Sans Serif (default theme) */
-.wm-body {
-    font-family: "MS Sans Serif", sans-serif; /* Default terminal font */
+/* Window manager window */
+.wm-window {
+    width: 600px;
+    height: 400px;
+    background-color: #c0c0c0; /* Light gray background for the windows */
+    border: 2px solid #000000; /* Black border for classic Windows 98 style */
+    border-radius: 0; /* Windows 98 had sharp corners */
+    box-shadow: 4px 4px 0 #404040; /* Drop shadow to mimic old-school 3D effect */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Example for other UI elements */
+/* Window header styling */
 .wm-header {
-    background-color: #333;
+    background-color: #000080; /* Windows 98 dark blue header */
     color: white;
-    padding: 10px;
+    padding: 5px 10px;
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    font-family: "MS Sans Serif", sans-serif; /* Default header font */
+}
+
+/* Header buttons */
+.wm-header-buttons button {
+    background: #c0c0c0; /* Light gray buttons */
+    border: 1px solid #000000; /* Black border for buttons */
+    color: black;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+/* Button hover effect */
+.wm-header-buttons button:hover {
+    background: #808080; /* Darker gray on hover */
+}
+
+/* Window content area */
+.wm-body {
+    flex: 1;
+    padding: 10px;
+    background-color: #ffffff; /* White interior for the terminal */
+    color: black;
+    overflow: auto;
+    font-family: "MS Sans Serif", sans-serif;
 }
