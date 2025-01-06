@@ -48,8 +48,8 @@ body {
     font-weight: bold;
     margin-left: 5px;
     cursor: pointer;
-    width: 20px; /* Fixed width for uniform buttons */
-    height: 20px; /* Fixed height for uniform buttons */
+    width: 10px; /* Fixed width for uniform buttons */
+    height: 10px; /* Fixed height for uniform buttons */
     text-align: center;
     padding: 0;
     line-height: 18px; /* Vertically center the symbols */
