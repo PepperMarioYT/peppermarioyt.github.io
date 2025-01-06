@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PepperMario!</title>
+    <title>Windows 98 Themed CLI</title>
     
     <!-- 98.css for Windows 98 styling -->
     <link rel="stylesheet" href="https://unpkg.com/98.css">
@@ -54,10 +54,9 @@
             terminalWindow.style.display = "none"; // Simulates closing the window
         }
 
-        // Disable right-click context menu
+        // Disable right-click globally
         document.addEventListener("contextmenu", function (event) {
-            event.preventDefault();
-            alert("Right-click is disabled on this website."); // Optional alert
+            event.preventDefault(); // Prevent the default context menu from appearing
         });
     </script>
 </body>
