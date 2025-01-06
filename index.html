@@ -101,7 +101,16 @@
                 const char = e.key;  // Capture the key pressed
 
                 if (char === 'Enter') {
-                    terminal.write('\r\nC:\\Windows\\System32> ');  // Show the new command prompt after pressing Enter
+                    const input = terminal.buffer.active.getLine(terminal.buffer.active.cursorY).translateToString();
+                    
+                    // Check if the input is empty or not
+                    if (input.trim() === '') {
+                        terminal.write('\r\nC:\\Windows\\System32> ');  // Simply show prompt on empty input
+                    } else {
+                        // Display the error message for any command entered
+                        terminal.write(`\r\n'${input}' is not recognized as an internal or external command,\r\noperable program or batch file.\r\n`);
+                        terminal.write('\r\nC:\\Windows\\System32> ');  // Show prompt again after error message
+                    }
                 } else {
                     terminal.write(char);  // Print the character pressed by the user
                 }
