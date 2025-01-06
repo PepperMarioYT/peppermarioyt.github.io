@@ -29,34 +29,43 @@
         </div>
     </div>
 
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="xterm/xterm.js"></script>
     <script>
-        const terminalElement = document.getElementById("terminal");
-        const terminal = new Terminal(); // Initialize xterm.js
-        terminal.open(terminalElement);
-        terminal.write("Welcome to your Windows 98 themed terminal!\r\n");
+        $(document).ready(function () {
+            // Initialize xterm.js terminal
+            const terminalElement = $("#terminal")[0]; // jQuery to select the terminal element
+            const terminal = new Terminal();
+            terminal.open(terminalElement);
+            terminal.write("Welcome to your Windows 98 themed terminal!\r\n");
 
-        const terminalWindow = document.querySelector(".window");
+            // Minimize window
+            $(".wm-header-buttons button:nth-child(1)").click(function () {
+                $(".window").hide(); // jQuery to hide the window
+            });
 
-        function minimizeWindow() {
-            terminalWindow.style.display = "none"; // Hides the window
-        }
+            // Maximize window
+            $(".wm-header-buttons button:nth-child(2)").click(function () {
+                $(".window").css({
+                    width: "100%",
+                    height: "100%",
+                    position: "fixed",
+                    top: "0",
+                    left: "0"
+                });
+            });
 
-        function maximizeWindow() {
-            terminalWindow.style.width = "100%";
-            terminalWindow.style.height = "100%";
-            terminalWindow.style.position = "fixed";
-            terminalWindow.style.top = "0";
-            terminalWindow.style.left = "0";
-        }
+            // Close window
+            $(".wm-header-buttons button:nth-child(3)").click(function () {
+                $(".window").remove(); // jQuery to remove the window
+            });
 
-        function closeWindow() {
-            terminalWindow.style.display = "none"; // Simulates closing the window
-        }
-
-        // Disable right-click globally
-        document.addEventListener("contextmenu", function (event) {
-            event.preventDefault(); // Prevent the default context menu from appearing
+            // Disable right-click globally
+            $(document).on("contextmenu", function (event) {
+                event.preventDefault();
+                alert("Right-click is disabled on this website."); // Optional alert
+            });
         });
     </script>
 </body>
