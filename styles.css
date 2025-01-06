@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #008080; /* Windows 98 teal background */
     font-family: "MS Sans Serif", sans-serif;
+    color: #ffffff;
 }
 
 /* Window manager container */
@@ -28,7 +29,6 @@ body {
 
 /* Window header styling */
 .wm-header {
-    background-color: #000080; /* Windows 98 dark blue header */
     color: white;
     padding: 5px 10px;
     font-family: "MS Sans Serif", sans-serif;
