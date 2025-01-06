@@ -1,17 +1,64 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>PepperMario!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="xterm/css/xterm.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>PepperMario!</title>
+    
+    <!-- 98.css for Windows 98 styling -->
     <link rel="stylesheet" href="https://unpkg.com/98.css">
-    <script src="xterm/lib/xterm.js"></script>
-    <script src="wm.js">
-  </head>
-  <body>
-    <p class="ms-sans-serif">This is MS Sans Serif text, used in the terminal.</p>
-    <p class="webdings">This is Webdings text, used for icons.</p>
-  </body>
+    
+    <!-- xterm.js styles for the terminal -->
+    <link rel="stylesheet" href="xterm/xterm.css">
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="window" style="width: 600px; height: 400px; margin: 50px auto;">
+        <div class="title-bar">
+            <span>Terminal</span>
+            <div class="wm-header-buttons" style="float: right;">
+                <button onclick="minimizeWindow()">1</button> <!-- Minimize -->
+                <button onclick="maximizeWindow()">0</button> <!-- Maximize -->
+                <button onclick="closeWindow()">r</button> <!-- Close -->
+            </div>
+        </div>
+        <div class="window-body">
+            <div id="terminal"></div>
+        </div>
+    </div>
+
+    <script src="xterm/xterm.js"></script>
+    <script>
+        const terminalElement = document.getElementById("terminal");
+        const terminal = new Terminal(); // Initialize xterm.js
+        terminal.open(terminalElement);
+        terminal.write("Welcome to your Windows 98 themed terminal!\r\n");
+
+        const terminalWindow = document.querySelector(".window");
+
+        function minimizeWindow() {
+            terminalWindow.style.display = "none"; // Hides the window
+        }
+
+        function maximizeWindow() {
+            terminalWindow.style.width = "100%";
+            terminalWindow.style.height = "100%";
+            terminalWindow.style.position = "fixed";
+            terminalWindow.style.top = "0";
+            terminalWindow.style.left = "0";
+        }
+
+        function closeWindow() {
+            terminalWindow.style.display = "none"; // Simulates closing the window
+        }
+
+        // Disable right-click context menu
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            alert("Right-click is disabled on this website."); // Optional alert
+        });
+    </script>
+</body>
 </html>
