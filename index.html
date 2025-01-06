@@ -31,7 +31,7 @@
 
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="xterm/js/xterm.js"></script>
+    <script src="xterm/lib/xterm.js"></script>
     <script>
         $(document).ready(function () {
             // Initialize xterm.js terminal
@@ -45,7 +45,7 @@
 
             // Simulate a brief pause before showing the command prompt
             setTimeout(function() {
-                terminal.write("\r\nC:\\PepperMario> ");  // Simulate the CMD prompt
+                terminal.write("\r\nC:\\Windows\\System32> ");  // Simulate the CMD prompt
             }, 2000);  // Wait 2 seconds before showing the prompt
 
             // Maximize window (Button 1)
