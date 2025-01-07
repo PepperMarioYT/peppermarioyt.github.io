@@ -10,9 +10,9 @@
     
     <!-- xterm.js styles for the terminal -->
     <link rel="stylesheet" href="xterm/css/xterm.css">  <!-- Updated to xterm/css/xterm.css -->
-    
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="xterm/lib/xterm.js"></script>  <!-- Correct path to xterm.js -->
 </head>
 <body>
     <div class="window" style="width: 600px; height: 450px; margin: 50px auto;">
@@ -29,9 +29,7 @@
         </div>
     </div>
 
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="xterm/lib/xterm.js"></script>  <!-- Correct path to xterm.js -->
+
     <script>
         $(document).ready(function () {
             const terminalElement = $("#terminal")[0];
