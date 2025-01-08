@@ -1,0 +1,8 @@
+/* Base styling for the body */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #008080; /* Windows 98 teal background */
+    font-family: "MS Sans Serif", sans-serif;
+    color: #ffffff;
+}
