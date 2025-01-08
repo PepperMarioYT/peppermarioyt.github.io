@@ -12,6 +12,11 @@
         allow="autoplay; fullscreen" allowfullscreen></iframe>
 
     <div id="countdown"></div>
+    <button id="overhaulButton">View New Overhaul</button><!-- This should go to Experimental-Overhaul -->
+
+    <noscript>
+        <p>JavaScript is disabled. The countdown and button functionality might not work as intended. Please enable JavaScript to experience the full site.</p>
+    </noscript>
 
     <script>
         // Set the date for when the site will launch
@@ -35,6 +40,11 @@
                 document.getElementById("countdown").innerHTML = "The site is live! Check it out!";
             }
         }, 1000);
+
+        // Add click event to the button
+        document.getElementById("overhaulButton").addEventListener("click", function() {
+            window.location.href = "Experimental-Overhaul";
+        });
     </script>
 </body>
 </html>
