@@ -10,6 +10,24 @@
     <link rel="stylesheet" href="https://unpkg.com/98.css">
 </head>
 <body>
-    
+    <div class="window" style="width: 300px">
+        <div class="title-bar">
+            <div class="title-bar-text">A Window With Stuff In It</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div id="terminal"></div>
+        </div>
+    </div>
+
+    <script>
+        var term = new Terminal();
+        term.open(document.getElementById('terminal'));
+        term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ');
+    </script>
 </body>
 </html>
