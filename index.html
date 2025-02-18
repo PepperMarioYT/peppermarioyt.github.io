@@ -43,6 +43,33 @@
             color: #ff3333;
             font-weight: bold;
         }
+        .ask-me-box {
+            margin-top: 30px;
+            text-align: center;
+        }
+        textarea {
+            width: 300px;
+            height: 100px;
+            font-size: 1rem;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e62e2e;
+        }
     </style>
 </head>
 <body>
@@ -54,8 +81,15 @@
         <p class="pronouns">Pronouns: I don't care, just don't use they/them or she/her.</p>
     </div>
 
+    <div class="ask-me-box">
+        <h2>Ask Me Anything!</h2>
+        <textarea id="questionBox" placeholder="Type your question here..."></textarea>
+        <br>
+        <button onclick="sendEmail()">Ask</button>
+    </div>
+
     <script>
-        // Prepare to BLAST THE MUSIC
+        // Prepare to BLAST THE MUSIC (safely)
         const music = new Howl({
             src: ["hl2_song29.mp3"], // Replace with your actual Half-Life music file
             volume: 1.0,
@@ -63,17 +97,28 @@
         });
 
         function unleashTheMadness() {
-            music.play().catch(() => {
-                console.log("Autoplay blocked! Click anywhere to unleash the pain.");
-                document.body.addEventListener("click", () => {
-                    music.play();
-                }, { once: true });
-            });
+            if (!music.playing()) { // Prevents multiple instances
+                music.play().catch(() => {
+                    console.log("Autoplay blocked! Click anywhere to unleash the pain.");
+                    document.body.addEventListener("click", () => {
+                        if (!music.playing()) music.play();
+                    }, { once: true });
+                });
+            }
         }
 
-        // Force it on load and any interaction
+        // Unleash on page load
         window.onload = unleashTheMadness;
-        //DO NOT UNLEASH THE MADNESS OVER AND OVER, iT WILL GLITCH OUT AND BLOW YOUR PC UP
+
+        function sendEmail() {
+            const question = document.getElementById("questionBox").value;
+            const subject = encodeURIComponent("Ask Me Anything section of github page");
+            const body = encodeURIComponent(question);
+
+            // Construct mailto link
+            const mailtoLink = `mailto:peppermarioyt@gmail.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+        }
     </script>
 
 </body>
