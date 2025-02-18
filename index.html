@@ -3,48 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PepperMario!</title>
+    <title>[Your Name] | Welcome to the Madness</title>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .container {
+            max-width: 600px;
+        }
+        a {
+            color: #ff3333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .hidden-rickroll {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Overhaul coming soon!</h1>
-    <p>In the meantime, enjoy this Wheatley Crab video!</p>
-    <iframe src="https://www.youtube-nocookie.com/embed/v47zSNZcyPQ?autoplay=1&controls=0&disablekb=1&fs=0&loop=1&playlist=v47zSNZcyPQ&modestbranding=1&rel=0" 
-        allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-    <div id="countdown"></div>
-    <button id="overhaulButton">View New Overhaul</button><!-- This should go to Experimental-Overhaul -->
-
-    <noscript>
-        <p>JavaScript is disabled. The countdown and button functionality might not work as intended. Please enable JavaScript to experience the full site.</p>
-    </noscript>
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <p>I'm <strong>[Your Name]</strong>. I build cool stuff and destroy eardrums.</p>
+        <p>Check out my <a href="#projects">Projects</a> or <a href="#contact">Contact Me</a>.</p>
+    </div>
 
     <script>
-        // Set the date for when the site will launch
-        var launchDate = new Date("Jan 15, 2025 5:00:00").getTime();
-
-        var countdown = setInterval(function() {
-            var now = new Date().getTime();
-            var timeLeft = launchDate - now;
-
-            var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML =
-                "Site launching in: " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-
-            // If the countdown is finished, display a message
-            if (timeLeft < 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "The site is live! Check it out!";
-            }
-        }, 1000);
-
-        // Add click event to the button
-        document.getElementById("overhaulButton").addEventListener("click", function() {
-            window.location.href = "Experimental-Overhaul";
+        // Prepare to BLAST THE MUSIC
+        const music = new Howl({
+            src: ["half-life-music.mp3"], // Replace with your actual Half-Life music file
+            volume: 1.0,
+            loop: true
         });
+
+        function unleashTheMadness() {
+            music.play().catch(() => {
+                console.log("Autoplay blocked! Click anywhere to unleash the pain.");
+                document.body.addEventListener("click", () => {
+                    music.play();
+                }, { once: true });
+            });
+        }
+
+        // Force it on load and any interaction
+        window.onload = unleashTheMadness;
+        document.body.addEventListener("mousemove", unleashTheMadness);
+        document.body.addEventListener("keydown", unleashTheMadness);
+        document.body.addEventListener("scroll", unleashTheMadness);
+
+        // Sneaky Rickroll
+        setTimeout(() => {
+            document.querySelector(".hidden-rickroll").click();
+        }, 30000); // Rickroll after 30 seconds (evil laugh)
     </script>
+
 </body>
 </html>
