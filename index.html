@@ -81,11 +81,16 @@
         <p class="pronouns">Pronouns: I don't care, just don't use they/them or she/her.</p>
     </div>
 
-    <div class="ask-me-box">
-        <h2>Ask Me Anything!</h2>
+
+    <button type="button">Ask Me Anything</button>
+    <div class="ask-me-modal">
+        <div class="title-bar">
+            <h2>Ask Me Anything!</h2>
+            <button type="button" class="close">X</button>
+        </div>
         <textarea id="questionBox" placeholder="Type your question here..."></textarea>
         <br>
-        <button onclick="sendEmail()">Ask</button>
+        <button onclick="sendEmail()" type="submit">Ask</button>
     </div>
 
     <script>
