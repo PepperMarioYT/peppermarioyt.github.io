@@ -43,19 +43,64 @@
             color: #ff3333;
             font-weight: bold;
         }
-        .ask-me-box {
-            margin-top: 30px;
+        /* Ask Me Anything modal styling */
+        .ask-me-modal {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            padding: 20px;
             text-align: center;
         }
-        textarea {
-            width: 300px;
-            height: 100px;
+        .ask-me-modal .title-bar {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .ask-me-modal h2 {
+            margin: 0;
+        }
+        .ask-me-modal button.close {
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .ask-me-modal button.close:hover {
+            background-color: #e62e2e;
+        }
+        .ask-me-modal textarea {
+            width: 80%;
+            height: 120px;
             font-size: 1rem;
             padding: 10px;
             background-color: #333;
             color: white;
             border: none;
             border-radius: 5px;
+            margin-top: 20px;
+        }
+        .ask-me-modal button {
+            margin-top: 20px;
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        .ask-me-modal button:hover {
+            background-color: #e62e2e;
         }
         button {
             margin-top: 10px;
@@ -81,12 +126,13 @@
         <p class="pronouns">Pronouns: I don't care, just don't use they/them or she/her.</p>
     </div>
 
+    <button type="button" onclick="openAskMeModal()">Ask Me Anything</button>
 
-    <button type="button">Ask Me Anything</button>
-    <div class="ask-me-modal">
+    <!-- Ask Me Anything Modal -->
+    <div class="ask-me-modal" id="askMeModal">
         <div class="title-bar">
             <h2>Ask Me Anything!</h2>
-            <button type="button" class="close">X</button>
+            <button type="button" class="close" onclick="closeAskMeModal()">X</button>
         </div>
         <textarea id="questionBox" placeholder="Type your question here..."></textarea>
         <br>
@@ -115,6 +161,17 @@
         // Unleash on page load
         window.onload = unleashTheMadness;
 
+        // Open Ask Me Anything modal
+        function openAskMeModal() {
+            document.getElementById('askMeModal').style.display = 'flex';
+        }
+
+        // Close Ask Me Anything modal
+        function closeAskMeModal() {
+            document.getElementById('askMeModal').style.display = 'none';
+        }
+
+        // Email function for the "Ask Me Anything"
         function sendEmail() {
             const question = document.getElementById("questionBox").value;
             const subject = encodeURIComponent("Ask Me Anything section of github page");
