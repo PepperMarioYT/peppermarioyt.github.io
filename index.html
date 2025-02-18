@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] | Welcome to the Madness</title>
+    <title>PepperMarioYT | Welcome to the Madness</title>
     <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+    <meta name="my-name" content="PepperMarioYT">
     <style>
         body {
             background-color: black;
@@ -36,12 +37,11 @@
         a:hover {
             text-decoration: underline;
         }
-        .hidden-rickroll {
-            position: absolute;
-            top: -100px;
-            left: -100px;
-            width: 50px;
-            height: 50px;
+        .pronouns {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #ff3333;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -49,14 +49,15 @@
 
     <div class="container">
         <h1>Welcome to My Website</h1>
-        <p>I'm <strong>[Your Name]</strong>. I build cool stuff and destroy eardrums.</p>
+        <p>I'm <strong>PepperMarioYT</strong>. I build cool stuff and destroy eardrums.</p>
         <p>Check out my <a href="#projects">Projects</a> or <a href="#contact">Contact Me</a>.</p>
+        <p class="pronouns">Pronouns: I don't care, just don't use they/them or she/her.</p>
     </div>
 
     <script>
         // Prepare to BLAST THE MUSIC
         const music = new Howl({
-            src: ["half-life-music.mp3"], // Replace with your actual Half-Life music file
+            src: ["hl2_song29.mp3"], // Replace with your actual Half-Life music file
             volume: 1.0,
             loop: true
         });
@@ -75,11 +76,6 @@
         document.body.addEventListener("mousemove", unleashTheMadness);
         document.body.addEventListener("keydown", unleashTheMadness);
         document.body.addEventListener("scroll", unleashTheMadness);
-
-        // Sneaky Rickroll
-        setTimeout(() => {
-            document.querySelector(".hidden-rickroll").click();
-        }, 30000); // Rickroll after 30 seconds (evil laugh)
     </script>
 
 </body>
