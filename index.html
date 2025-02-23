@@ -3,185 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PepperMarioYT | Welcome to the Madness</title>
+    <title>PepperMarioYT</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
-    <meta name="my-name" content="PepperMarioYT">
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        h1 {
-            font-size: 3rem;
-        }
-        p {
-            font-size: 1.5rem;
-        }
-        .container {
-            max-width: 600px;
-        }
-        a {
-            color: #ff3333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .pronouns {
-            font-size: 1.2rem;
-            margin-top: 20px;
-            color: #ff3333;
-            font-weight: bold;
-        }
-        /* Ask Me Anything modal styling */
-        .ask-me-modal {
-            display: none;
-            background-color: rgba(0, 0, 0, 0.7);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .ask-me-modal .title-bar {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-        .ask-me-modal h2 {
-            margin: 0;
-        }
-        .ask-me-modal button.close {
-            background-color: #ff3333;
-            color: white;
-            border: none;
-            padding: 5px 15px;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        .ask-me-modal button.close:hover {
-            background-color: #e62e2e;
-        }
-        .ask-me-modal textarea {
-            width: 80%;
-            height: 120px;
-            font-size: 1rem;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .ask-me-modal button {
-            margin-top: 20px;
-            background-color: #ff3333;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-        .ask-me-modal button:hover {
-            background-color: #e62e2e;
-        }
-        button {
-            margin-top: 10px;
-            background-color: #ff3333;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #e62e2e;
-        }
-    </style>
 </head>
 <body>
+    <h1>PepperMario</h1>
+    <h2>Professional Strawpage Hater™</h2>
+    
+    <p>Welcome to my personal corner of the web! Have fun exploring.</p>
 
-    <div class="container">
-        <h1>Welcome to My Website</h1>
-        <p>I'm <strong>PepperMarioYT</strong>. I build cool stuff and destroy eardrums.</p>
-        <p>Check out my <a href="#projects">Projects</a> or <a href="#contact">Contact Me</a>.</p>
-        <p class="pronouns">Pronouns: I don't care, just don't use they/them or she/her.</p>
-    </div>
+    <section id="ama">
+        <h3>Ask Me Anything!</h3>
+        <p><strong>Warning:</strong> I'll roast your question... or your lack of one. 😎</p>
+        <form id="ama-form">
+            <input type="text" id="ama-question" placeholder="Ask me something... if you dare!" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="ama-response"></p>
+    </section>
 
-    <button type="button" onclick="openAskMeModal()">Ask Me Anything</button>
+    <section id="hyperfixations">
+        <h3>Hyperfixations</h3>
+        <ul>
+            <li>Programming (obviously!)</li>
+            <li>Making cool stuff with code</li>
+            <li>Speedrunning... or failing at it 😂</li>
+            <li>BFDI (Battle for Dream Island) - because who doesn't love a competition between talking, rolling objects?</li>
+            <li>Half-Life series - from the OG to the modern day</li>
+            <li>Portal - for all the mind-bending puzzles</li>
+            <li>Black Mesa - the fan remake of Half-Life? Chef's kiss! 😋</li>
+            <li>Source Engine - it's old, but still going strong!</li>
+            <li>GoldSRC - throwback to the old days of modding</li>
+            <li>Source 2 - the future of modding and gaming!</li>
+            <li>Garry's Mod - the sandbox of endless possibilities</li>
+            <li>EAS (Emergency Alert System) - because who doesn’t like random tones in the middle of the night? 🔔</li>
+            <li>Old Windows versions - nostalgia overload! Windows 95 to XP, anyone?</li>
+            <li>Sorting Algorithms - I live for that sweet, sweet optimization! Merge Sort, Quick Sort, Bubble Sort... I know them all! 🤓</li>
+        </ul>
+    </section>
 
-    <!-- Ask Me Anything Modal -->
-    <div class="ask-me-modal" id="askMeModal">
-        <div class="title-bar">
-            <h2>Ask Me Anything!</h2>
-            <button type="button" class="close" onclick="closeAskMeModal()">X</button>
-        </div>
-        <textarea id="questionBox" placeholder="Type your question here..."></textarea>
-        <br>
-        <button onclick="sendEmail()" type="submit">Ask</button>
-    </div>
+    <section id="hated-things">
+        <h3>Things I Absolutely Hate</h3>
+        <ul>
+            <li>Strawpage (seriously, don't make one!)</li>
+            <li>When my code doesn't work (seriously, why?)</li>
+            <li>Waiting for loading screens forever</li>
+        </ul>
+    </section>
 
-    <script>
-        // Prepare to BLAST THE MUSIC (safely)
-        const music = new Howl({
-            src: ["hl2_song29.mp3"], // Replace with your actual Half-Life music file
-            volume: 1.0,
-            loop: true
-        });
+    <!-- Removed the Email Me section -->
 
-        function unleashTheMadness() {
-            if (!music.playing()) { // Prevents multiple instances
-                music.play().catch(() => {
-                    console.log("Autoplay blocked! Click anywhere to unleash the pain.");
-                    document.body.addEventListener("click", () => {
-                        if (!music.playing()) music.play();
-                    }, { once: true });
-                });
-            }
-        }
-
-        // Unleash on page load
-        window.onload = unleashTheMadness;
-
-        // Open Ask Me Anything modal
-        function openAskMeModal() {
-            document.getElementById('askMeModal').style.display = 'flex';
-        }
-
-        // Close Ask Me Anything modal
-        function closeAskMeModal() {
-            document.getElementById('askMeModal').style.display = 'none';
-        }
-
-        // Email function for the "Ask Me Anything"
-        function sendEmail() {
-            const question = document.getElementById("questionBox").value;
-            const subject = encodeURIComponent("Ask Me Anything section of github page");
-            const body = encodeURIComponent(question);
-
-            // Construct mailto link
-            const mailtoLink = `mailto:peppermarioyt@gmail.com?subject=${subject}&body=${body}`;
-            window.location.href = mailtoLink;
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
