@@ -19,13 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const question = amaQuestion.value.trim();
         if (question === '') {
             alert("ok, guessing your gonna draw something")
-        } else {
-
-            // Create the mailto link with the question as part of the email body
-            const mailtoLink = `mailto:peppermarioyt@gmail.com?subject=Github%20Page%20-%20AMA&body=Question:%20${encodeURIComponent(question)}`;
-            window.location.href = mailtoLink;  // Trigger the email client with the pre-filled details
         }
-
+        // Create the mailto link with the question as part of the email body
+        const mailtoLink = `mailto:peppermarioyt@gmail.com?subject=Github%20Page%20-%20AMA&body=Question:%20${encodeURIComponent(question)}`;
+        window.location.href = mailtoLink;  // Trigger the email client with the pre-filled details
         amaQuestion.value = '';  // Clear input after submission
     });
 });
