@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const question = amaQuestion.value.trim();
         if (question === '') {
-            amaResponse.textContent = 'You didn’t even bother asking? C’mon, give me something to roast! 😤';
+            alert("ok, guessing your gonna draw something")
         } else {
-            amaResponse.textContent = `Oh, you asked: "${question}"... Well, prepare to be roasted! 😎🔥`;
 
             // Create the mailto link with the question as part of the email body
             const mailtoLink = `mailto:peppermarioyt@gmail.com?subject=Github%20Page%20-%20AMA&body=Question:%20${encodeURIComponent(question)}`;
