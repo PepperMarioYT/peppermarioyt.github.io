@@ -16,10 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
     amaForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const question = amaQuestion.value.trim();
+        /* const question = amaQuestion.value.trim();
         // Create the mailto link with the question as part of the email body
         const mailtoLink = `mailto:peppermarioyt@gmail.com?subject=Github%20Page%20-%20AMA&body=Question:%20${encodeURIComponent(question)}`;
         window.location.href = mailtoLink;  // Trigger the email client with the pre-filled details
-        amaQuestion.value = '';  // Clear input after submission
+        amaQuestion.value = '';  // Clear input after submission */
+        alert("The AMA revamp is being worked on, in the meantime DM the question to me")
     });
 });
