@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             amaForm.style.display = "none";
             linkBtn.style.display = "inline-block";
             unlinkBtn.style.display = "none";
-            unlinkMsg.textContent = "You have been unlinked. 💔";
+            unlinkMsg.textContent = "You are not linked. 💔";
         }
     }
 

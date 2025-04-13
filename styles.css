@@ -127,19 +127,19 @@ section {
     animation: slideUp 0.8s ease-out;
 }
 
-button #link-discord {
-    padding: 10px 20px;
-    border: none;
-    background-color: #7289da;
-    color: white;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
+#link-discord {
+    padding: 10px 20px !important;
+    border: none !important;
+    background-color: #7289da !important;
+    color: white !important;
+    font-size: 1rem !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+    margin-top: 10px !important;
 }
 
-button #link-discord:hover {
-    background-color: #5b6eae;
+#link-discord:hover {
+    background-color: #5b6eae !important;
 }
 
 #unlink-discord {
