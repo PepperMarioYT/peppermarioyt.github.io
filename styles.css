@@ -127,6 +127,22 @@ h1, h2, h3 {
     animation: slideUp 0.8s ease-out;
 }
 
+#link-discord {
+    padding: 10px 20px;
+    border: none;
+    background-color: #7289da;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#link-discord:hover {
+    background-color: #5b6eae;
+}
+
+
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
