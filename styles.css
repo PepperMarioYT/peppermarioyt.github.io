@@ -123,7 +123,7 @@ h1, h2, h3 {
     animation: fadeIn 1s ease-in-out;
 }
 
-#ama-form, #hyperfixations, #hated-things {
+section {
     animation: slideUp 0.8s ease-out;
 }
 
