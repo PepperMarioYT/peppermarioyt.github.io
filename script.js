@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const popup = window.open(
                 atob("aHR0cHM6Ly9kaXNjb3JkLmNvbS9vYXV0aDIvYXV0aG9yaXplP2NsaWVudF9pZD0xMzYwOTkzNDE3Nzk4MjIyMDQ1JnJlc3BvbnNlX3R5cGU9Y29kZSZyZWRpcmVjdF91cmk9aHR0cHMlM0ElMkYlMkZwZXBwZXJtYXJpb3l0LmdpdGh1Yi5pbyUyRmNhbGxiYWNrLmh0bWwmc2NvcGU9aWRlbnRpZnkrZ3VpbGRzLmNoYW5uZWxzLnJlYWQ="),
                 'discordLinkPopup',
-                'width=500,height=600'
+                'width=800,height=1000'
             );
         });        
     });
