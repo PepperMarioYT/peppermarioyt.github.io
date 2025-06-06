@@ -1,5 +1,5 @@
 /* Default for all modern browsers */
-.body {
+body {
   background-image: url('others.png');
   background-size: cover;
   width: 300px;
@@ -8,7 +8,7 @@
 
 /* IE 10 and 11 hack using a media query only IE understands */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .body {
+  body {
     background-image: url('ie.png');
   }
 }
