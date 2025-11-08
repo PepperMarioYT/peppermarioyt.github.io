@@ -1,104 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gimmicks</title>
-    <style>
-        /* 🌟 Whimsically Stylish Form 🌟 */
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gimmicks</title>
+        <style>
+            /* 🌟 Whimsically Stylish Form 🌟 */
 
-body {
-  font-family: 'Quicksand', 'Segoe UI', sans-serif;
-  background: #fefae0;
-  color: #333;
-  padding: 2rem;
-}
+    body {
+    font-family: 'Quicksand', 'Segoe UI', sans-serif;
+    background: #fefae0;
+    color: #333;
+    padding: 2rem;
+    }
 
-form {
-  max-width: 500px;
-  margin: auto;
-  background: #fff;
-  border: 3px dotted #ffb703;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
-}
+    form {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    border: 3px dotted #ffb703;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+    }
 
-h2 {
-  text-align: center;
-  color: #fb8500;
-  margin-bottom: 1.5rem;
-  font-family: 'Fredoka', sans-serif;
-}
+    h2 {
+    text-align: center;
+    color: #fb8500;
+    margin-bottom: 1.5rem;
+    font-family: 'Fredoka', sans-serif;
+    }
 
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #219ebc;
-}
+    label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #219ebc;
+    }
 
-input[type="text"],
-input[type="email"],
-textarea,
-select {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1.2rem;
-  border: 2px solid #8ecae6;
-  border-radius: 10px;
-  background-color: #e0f7fa;
-  transition: all 0.3s ease;
-}
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.2rem;
+    border: 2px solid #8ecae6;
+    border-radius: 10px;
+    background-color: #e0f7fa;
+    transition: all 0.3s ease;
+    }
 
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: #219ebc;
-  outline: none;
-  background-color: #ffffff;
-}
+    input:focus,
+    textarea:focus,
+    select:focus {
+    border-color: #219ebc;
+    outline: none;
+    background-color: #ffffff;
+    }
 
-button {
-  background-color: #ffb703;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
+    button {
+    background-color: #ffb703;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    }
 
-button:hover {
-  transform: scale(1.05);
-  background-color: #fb8500;
-}
+    button:hover {
+    transform: scale(1.05);
+    background-color: #fb8500;
+    }
 
-::placeholder {
-  color: #6c757d;
-  font-style: italic;
-}
+    ::placeholder {
+    color: #6c757d;
+    font-style: italic;
+    }
 
-/* 🎉 Bonus: Button bounce */
-button:active {
-  animation: bounce 0.3s ease;
-}
+    /* 🎉 Bonus: Button bounce */
+    button:active {
+    animation: bounce 0.3s ease;
+    }
 
-@keyframes bounce {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.95); }
-  100% { transform: scale(1); }
-}
-    </style>
-</head>
-<body>
-    <form>
-        <input type="text" name="name" id="name">
-        <textarea name="name" id="name"></textarea>
-        <button type="submit">Submit</button>
-        <button type="reset"></button>
-    </form>
-</body>
-</html>
+    @keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+    }
+        </style>
+    </head>
+    <body>
+        <form>
+<form>
+  <label for="name">who would you like to be shown as to me</label>
+  <input type="text" name="name" id="name" placeholder="e.g. PepperMarioYT">
+
+  <label for="message">your message</label>
+  <textarea name="message" id="message" placeholder="type here :3..."></textarea>
+
+  <button type="submit">submit</button>
+  <button type="reset">reset</button>
+</form>
+        </form>
+
+        <script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+
+    const payload = {
+      content: `**${name}** says:\n${message}`
+    };
+
+    fetch("https://discord.com/api/webhooks/1360753067317792788/lT7lTU8wxw6Yx6BXt315-oA8peRseiwFPXijd-9mYHC9EqglDRBSOHNEFovFpwb-jsko", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("🎉 Message sent to Discord!");
+        form.reset();
+      } else {
+        alert("⚠️ Something went wrong sending to Discord.");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("🚨 Network error! Try again later.");
+    });
+  });
+</script>
+    </body>
+    </html>
