@@ -1,0 +1,27 @@
+name: Build Packages
+
+on:
+  push:
+    paths:
+      - 'repo/debs/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Generate Packages index
+        run: |
+          cd repo
+          dpkg-scanpackages debs /dev/null > Packages
+          bzip2 -c Packages > Packages.bz2
+
+      - name: Commit and push updated Packages
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add repo/Packages repo/Packages.bz2
+          git commit -m "Update Packages index"
+          git push
