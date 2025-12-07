@@ -1,1 +1,17 @@
+Package: me.kritanta.pivot
+Version: 0.2.2
+Architecture: iphoneos-arm
+Maintainer: Kritanta
+Installed-Size: 920
+Depends: mobilesubstrate, firmware (>= 6.0)
+Filename: debs/me.kritanta.pivot_0.2.2_iphoneos-arm.deb
+Size: 40884
+MD5sum: 46d112cfe676e8ba349821251e6b2ff1
+SHA1: 79def7013ecf82e7c4f2e19df2ccd35d1c4899ac
+SHA256: ac25c6fa87a184b52d1baffadd02ef5c15541306f05407545c3d4245bd44a5bc
+Section: Tweaks
+Description: AutoRotate on the Home Screen on all devices
+Author: Kritanta
+Depiction: http://repo.kritanta.me/depictions/?id=me.kritanta.pivot
+Name: Pivot
 
